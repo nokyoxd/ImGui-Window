@@ -141,6 +141,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="core\include.hpp" />
+    <ClInclude Include="core\main\globals.h" />
+    <ClInclude Include="core\ui\menu.h" />
+    <ClInclude Include="core\ui\ui.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="core\main\main.cpp" />
+    <ClCompile Include="core\ui\menu.cpp" />
+    <ClCompile Include="core\ui\ui.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
