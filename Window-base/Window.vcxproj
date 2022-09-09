@@ -145,7 +145,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="core\include.hpp" />
-    <ClInclude Include="core\ui\menu.h" />
     <ClInclude Include="core\ui\ui.h" />
     <ClInclude Include="dependencies\ImGui\CPP\imgui_stdlib.h" />
     <ClInclude Include="dependencies\ImGui\DX9\imgui_impl_dx9.h" />
@@ -159,8 +158,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\main\main.cpp" />
-    <ClCompile Include="core\main\threads.cpp" />
-    <ClCompile Include="core\ui\menu.cpp" />
     <ClCompile Include="core\ui\ui.cpp" />
     <ClCompile Include="dependencies\ImGui\CPP\imgui_stdlib.cpp" />
     <ClCompile Include="dependencies\ImGui\DX9\imgui_impl_dx9.cpp" />

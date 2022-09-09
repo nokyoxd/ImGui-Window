@@ -1,11 +1,17 @@
 # ImGui Window [WIP]
-DirectX 9 ImGui window
+Clean DirectX 9 ImGui Window 
 
 ## Features
 - Window transparency
 - Window margin
 
+## Setup
+- Clone the repository
+- Open solution
+- Set platform to x86
+- Build it
+
 ## Dependencies
--> [Dear ImGui](https://github.com/ocornut/imgui/)
+- [Dear ImGui](https://github.com/ocornut/imgui/)
 
 

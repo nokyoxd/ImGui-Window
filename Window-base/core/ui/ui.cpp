@@ -18,7 +18,7 @@ LRESULT WINAPI WndProc(
 
 void UI::Setup()
 {
-    CreateHWindow();
+    CreateHWindow("Window Name", "Window Class Name");
     CreateDevice();
     CreateImGui();
 
@@ -28,7 +28,7 @@ void UI::Setup()
         Render();
         DestroyRender();
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        std::this_thread::sleep_for(std::chrono::milliseconds(5));
     }
 
     DestroyImGui();
@@ -36,7 +36,7 @@ void UI::Setup()
     DestroyHWindow();
 }
 
-void UI::CreateHWindow()
+void UI::CreateHWindow(const char* szWindowName, const char* szWindowClassName)
 {
     /* Center window pos */
     int iScreenWidth = GetSystemMetrics(SM_CXSCREEN) / 2 - iWidth / 2;
@@ -52,13 +52,13 @@ void UI::CreateHWindow()
     WndClass.hCursor = NULL;
     WndClass.hbrBackground = NULL;
     WndClass.lpszMenuName = NULL;
-    WndClass.lpszClassName = "Loader class";
+    WndClass.lpszClassName = szWindowClassName;
     WndClass.hIconSm = NULL;
 
     RegisterClassEx(&WndClass);
     HWnd = CreateWindow(
         WndClass.lpszClassName,
-        "Loader",
+        szWindowName,
         WS_POPUP,
         iScreenWidth,
         iScreenHeight,
@@ -182,7 +182,7 @@ void UI::Render()
 {
     ImGui::SetNextWindowPos({ 0, 0 });
     ImGui::SetNextWindowSize({ UI::iWidth, UI::iHeight });
-    ImGui::Begin("Name", &bRun, 0);
+    ImGui::Begin("##window", &bRun, ImGuiWindowFlags_NoResize);
     {
         
 
@@ -268,7 +268,7 @@ LRESULT WINAPI WndProc(
 
             if (UI::Pos.x >= 0 &&
                 UI::Pos.x <= UI::iWidth &&
-                UI::Pos.y >= 0 && UI::Pos.y <= 50)
+                UI::Pos.y >= 0 && UI::Pos.y <= 20)
                 SetWindowPos(
                     UI::HWnd,
                     HWND_TOPMOST,
