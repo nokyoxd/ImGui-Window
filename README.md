@@ -1,4 +1,4 @@
-# ImGui Window [WIP]
+# ImGui Window
 Clean DirectX 9 ImGui Window 
 
 ## Features
